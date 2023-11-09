@@ -3,6 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="enroll.js" /> -->
+    <!-- <script src="enroll.js" defer></script> -->
+    <script>
+      function registerSurvey() {
+        var surveyTitle = document.getElementById('input-survey-title').value;
+        var startDate = document.getElementById('start-date').value;
+        var endDate = document.getElementById('end-date').value;
+        var imageUrl = document.getElementById('input-image-url').value;
+
+        document.getElementById('survey-title').innerText = surveyTitle;
+        document.getElementById('survey-period').innerText =
+          '${startDate} - ${endDate}';
+        document.getElementById('survey-image').querySelector('img').src =
+          imageUrl;
+      }
+      //로그아웃 기능 구현
+      function logout() {
+        alert('로그아웃 되었습니다.');
+        window.location.href = 'login.html';
+      }
+    </script>
     <title>내 설문 목록</title>
   </head>
   <style>
@@ -160,6 +181,50 @@
     .sidenav a:hover {
       background-color: #444;
     }
+
+    /*설문조사 테이블 설정*/
+    .sur-table {
+      position: absolute;
+      top: 25%;
+      left: 15%;
+      width: 70%;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #555;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .edit-button,
+    .delete-button {
+      background-color: #4caf50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 2px;
+    }
+
+    .edit-button:hover,
+    .delete-button:hover {
+      background-color: #45a049;
+    }
   </style>
   <body>
     <!-- 배경 이미지-->
@@ -183,16 +248,58 @@
       <a href="mypage_i.html">회원정보 수정</a>
       <a href="my_survey_list.html">내설문 목록</a>
     </div>
+    <div class="sur-table">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>설문 이미지</th>
+            <th>설문 제목</th>
+            <th>설문 기간</th>
+            <th>등록자</th>
+            <th>수정</th>
+            <th>삭제</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Add survey data dynamically here -->
+          <tr>
+            <td rowspan="4">
+              <img
+                src="img/dawn.jpg"
+                alt="설문 이미지"
+                style="max-width: 100px; max-height: 100px"
+              />
+            </td>
+            <td id="survey-title">
+              <!-- <label for="survey-title">설문 제목:</label>
+              <input
+                type="text"
+                id="input-survey-title"
+                name="survey-title"
+                required
+              /> -->
+            </td>
+            <td id="survey">
+              <!-- Add this inside your form for survey registration -->
+              <!-- <label for="start-date">설문 시작일:</label>
+              <input type="date" id="start-date" name="start-date" required />
 
-    <div class="my-surlist">
-      <div class="sur-t" style="text-overflow: ellipsis">
-        <% data.forEach(function(item,index){ %>
-        <tr>
-          <td style="border-bottom: 1px solid rgba(85, 83, 83, 0.473)"></td>
-        </tr>
-        <%});%>
-        <table></table>
-      </div>
+              <label for="end-date">설문 종료일:</label>
+              <input type="date" id="end-date" name="end-date" required /> -->
+            </td>
+            <td>John Doe</td>
+            <td>
+              <button class="edit-button" onclick="editSurvey()">수정</button>
+            </td>
+            <td>
+              <button class="delete-button" onclick="deleteSurvey()">
+                삭제
+              </button>
+            </td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
     </div>
   </body>
 </html>

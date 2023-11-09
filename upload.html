@@ -14,6 +14,7 @@
       //로그아웃 기능 구현
       function logout() {
         alert('로그아웃 되었습니다.');
+        window.location.href = 'login.html';
       }
 
       // 스크롤 이벤트 핸들러
@@ -294,7 +295,9 @@
       <a href="mypage_i.html"><b>마이페이지</b></a>
       <div class="login-info">
         <div class="username">님 환영합니다.</div>
-        <div class="logout-button" onclick="logout()">로그아웃</div>
+        <div class="logout-button" id="logoutBtn" onclick="logout()">
+          로그아웃
+        </div>
       </div>
     </div>
 
