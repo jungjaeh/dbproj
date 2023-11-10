@@ -65,6 +65,7 @@
         color: #fff;
         display: block;
         margin-right: 10px;
+        font-size: 30px;
       }
 
       /* 메뉴 링크 스타일 (마우스 호버 시) */
@@ -115,7 +116,7 @@
       .sidenav a {
         padding: 15px 25px;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 30px;
         color: #fff;
         display: block;
       }
@@ -124,6 +125,48 @@
       .sidenav a:hover {
         background-color: #444;
       }
+
+      .sur-table{
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        width: 75%;
+      }
+
+      table{
+        width:100%;
+        border-collapse: collapse;
+      }
+
+      th,
+    td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #555;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .edit-button,
+    .delete-button {
+      background-color: red;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 2px;
+    }
+
+    .edit-button:hover,
+    .delete-button:hover {
+      background-color: red;
+    }
     </style>
   </head>
   <body>
@@ -146,5 +189,30 @@
     <div class="sidenav">
       <a href=""><b>회원목록</b></a>
     </div>
+
+    <!-- 회원 목록 테이블 -->
+    <div class="sur-table">
+      <table border="1">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>학번</th>
+          <th>학년</th>
+          <th>학과</th>
+          <th>회원삭제</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="3"></td>
+          <td id="name"></td>
+          <td id="studentId"></td>
+          <td id="grade"></td>
+          <td>
+            <button class="delete-button" onclick="deleteSurvey()">회원 삭제</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
