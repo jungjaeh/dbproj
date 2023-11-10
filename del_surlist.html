@@ -24,7 +24,7 @@
         window.location.href = 'login.html';
       }
     </script>
-    <title>관리자 설문 관리</title>
+    <title>삭제 설문 목록</title>
   </head>
   <style>
     /*배경 이미지 설정*/
@@ -212,8 +212,7 @@
       background-color: #f2f2f2;
     }
 
-    .select-button,
-    .delete-button {
+    .recover-button {
       background-color: #4caf50;
       color: white;
       padding: 5px 10px;
@@ -223,8 +222,7 @@
       margin: 2px;
     }
 
-    .select-button:hover,
-    .delete-button:hover {
+    .recover-button:hover {
       background-color: #45a049;
     }
   </style>
@@ -252,8 +250,7 @@
             <th>설문 제목</th>
             <th>설문 기간</th>
             <th>등록자</th>
-            <th>상세보기</th>
-            <th>삭제</th>
+            <th>복원</th>
           </tr>
         </thead>
         <tbody>
@@ -270,13 +267,8 @@
             <td id="survey"></td>
             <td id="name"></td>
             <td>
-              <button class="select-button" onclick="selectSurvey()">
-                상세보기
-              </button>
-            </td>
-            <td>
-              <button class="delete-button" onclick="deleteSurvey()">
-                삭제하기
+              <button class="recover-button" onclick="recoverSurvey()">
+                복원하기
               </button>
             </td>
           </tr>
