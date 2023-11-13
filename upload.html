@@ -322,8 +322,8 @@
             <label for="sur_link">설문 링크</label>
           </td>
           <td>
-            <input type="url" id="sur_url" />
-            <input type="hidden" name="sur_url" />
+            <input type="url" id="sur_link" />
+            <input type="hidden" name="sur_link" />
           </td>
         </tr>
 
@@ -370,8 +370,8 @@
           <td>
             <input type="date" id="ymd" />
             <input type="time" id="ymd" /> 부터
-            <input type="date" id="ymd" />
-            <input type="time" id="ymd" /> 까지
+            <input type="date" id="ymt" />
+            <input type="time" id="ymt" /> 까지
           </td>
         </tr>
         <tr>
@@ -379,6 +379,7 @@
             <label for="sur_target">설문 대상</label>
           </td>
           <td>
+            <!-- sur_dep -->
             <label for="comboBox1">학부 선택:</label>
             <select id="comboBox1" onchange="updateComboBox2()">
               <option value="">선택하세요</option>
@@ -391,6 +392,7 @@
               <option value="해양.스포츠학부">해양.스포츠학부</option>
               <option value="자유전공학부">자유전공학부</option>
             </select>
+            <!-- sur_major -->
             <label for="comboBox2">전공 선택:</label>
             <select id="comboBox2">
               <option value="">선택하세요</option>
