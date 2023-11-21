@@ -23,6 +23,11 @@
         alert('로그아웃 되었습니다.');
         window.location.href = 'login.html';
       }
+
+      //수정버튼 클릭시 새창 구현
+      function editSurvey() {
+        window.open('update_survey.html');
+      }
     </script>
     <title>내 설문 목록</title>
   </head>
@@ -235,7 +240,9 @@
 
     <!-- 상단 바 -->
     <div class="topbar">
-      <img class="logo" src="img/logo.jpg" alt="로고 이미지" />
+      <a href="mypage.html">
+        <img class="logo" src="img/logo.jpg" alt="로고 이미지"
+      /></a>
       <a href="upload.html">설문 등록</a>
       <a href="mypage_i.html">마이페이지</a>
       <div class="login-info">
